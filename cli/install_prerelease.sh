@@ -50,7 +50,7 @@ systemctl --user disable plugin_loader 2> /dev/null
 systemctl stop plugin_loader 2> /dev/null
 systemctl disable plugin_loader 2> /dev/null
 
-curl -L https://raw.githubusercontent.com/KrisCris/decky-loader/main/dist/plugin_loader-prerelease.service  --output ${HOMEBREW_FOLDER}/services/plugin_loader-prerelease.service
+curl -L https://raw.githubusercontent.com/KrisCris/decky-loader/proxy_v3/dist/plugin_loader-prerelease.service  --output ${HOMEBREW_FOLDER}/services/plugin_loader-prerelease.service
 
 cat > "${HOMEBREW_FOLDER}/services/plugin_loader-backup.service" <<- EOM
 [Unit]
