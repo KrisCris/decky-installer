@@ -13,17 +13,17 @@ do
     case $(echo "${release}" | tr '[:lower:]' '[:upper:]') in
     S*)
         echo "Installing stable version"
-        curl -L https://github.com/SteamDeckHomebrew/decky-installer/releases/latest/download/install_release.sh | sh
+        curl -L https://github.com/KrisCris/decky-installer/releases/latest/download/install_release.sh | sh
         exit 0
         ;;
     P*)
         echo "Installing pre-release"
-        curl -L https://github.com/SteamDeckHomebrew/decky-installer/releases/latest/download/install_prerelease.sh | sh
+        curl -L https://github.com/KrisCris/decky-installer/releases/latest/download/install_prerelease.sh | sh
         exit 0
         ;;
     U*)
         echo "Uninstalling decky"
-        curl -L https://github.com/SteamDeckHomebrew/decky-installer/releases/latest/download/uninstall.sh | sh
+        curl -L https://github.com/KrisCris/decky-installer/releases/latest/download/uninstall.sh | sh
         exit 0
         ;;
     *)

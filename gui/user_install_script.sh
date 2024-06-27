@@ -136,9 +136,9 @@ sudo -u $SUDO_USER  touch "${USER_DIR}/.steam/steam/.cef-enable-remote-debugging
 
 echo "30" ; echo "# Finding latest $BRANCH";
 if [ "$BRANCH" = 'prerelease' ] ; then
-    RELEASE=$(curl -s 'https://api.github.com/repos/SteamDeckHomebrew/decky-loader/releases' | jq -r "first(.[] | select(.prerelease == "true"))")
+    RELEASE=$(curl -s 'https://api.github.com/repos/KrisCris/decky-loader/releases' | jq -r "first(.[] | select(.prerelease == "true"))")
 else
-    RELEASE=$(curl -s 'https://api.github.com/repos/SteamDeckHomebrew/decky-loader/releases' | jq -r "first(.[] | select(.prerelease == "false"))")
+    RELEASE=$(curl -s 'https://api.github.com/repos/KrisCris/decky-loader/releases' | jq -r "first(.[] | select(.prerelease == "false"))")
 fi
 VERSION=$(jq -r '.tag_name' <<< ${RELEASE} )
 DOWNLOADURL=$(jq -r '.assets[].browser_download_url | select(endswith("PluginLoader"))' <<< ${RELEASE})
@@ -160,7 +160,7 @@ systemctl stop plugin_loader 2> /dev/null
 systemctl disable plugin_loader 2> /dev/null
 
 echo "85" ; echo "# Setting up systemd" ;
-curl -L https://raw.githubusercontent.com/SteamDeckHomebrew/decky-loader/main/dist/plugin_loader-${BRANCH}.service  --output ${HOMEBREW_FOLDER}/services/plugin_loader-${BRANCH}.service
+curl -L https://raw.githubusercontent.com/KrisCris/decky-loader/main/dist/plugin_loader-${BRANCH}.service  --output ${HOMEBREW_FOLDER}/services/plugin_loader-${BRANCH}.service
 cat > "${HOMEBREW_FOLDER}/services/plugin_loader-backup.service" <<- EOM
 [Unit]
 Description=SteamDeck Plugin Loader

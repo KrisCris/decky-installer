@@ -39,7 +39,7 @@ jobs:
         id: latest_release
         env:
           token: ${{ secrets.GITHUB_TOKEN }}
-          repository: "SteamDeckHomebrew/decky-installer"
+          repository: "KrisCris/decky-installer"
           type: "nodraft"
 
       - name: Prepare tag ⚙️
